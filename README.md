@@ -14,11 +14,10 @@ We picked up most of these configuration settings, modified some and added some 
 
 - Session
 
-  - `Connection type` = :black_circle: `SSH`  
+  - `Connection type` = :black_circle: `SSH`
 
-
-  > :bulb:  
-  > you can also change `Close window on exit` to :black_circle: `Never` by setting the line `"CloseOnExit"=dword:00000001` in the `\configurations\default-settings.reg` file
+    > :bulb:  
+    > you can also change `Close window on exit` to :black_circle: `Never` by setting the line `"CloseOnExit"=dword:00000001` in the `\configurations\default-settings.reg` file
 
 - Terminal / Bell
 
@@ -50,11 +49,10 @@ We picked up most of these configuration settings, modified some and added some 
 
 - Window / Selection
 
-  - `Paste to clipboard in RTF as well as plain text`  
+  - `Paste to clipboard in RTF as well as plain text`
 
-
-  > :bulb:  
-  > you can also change `Action on mouse buttons` to :black_circle: `xterm (Right extends, Middle pastes)` by setting the line `"MouseIsXterm"=dword:00000001` in the `\configurations\default-settings.cfg` file
+    > :bulb:  
+    > you can also change `Action on mouse buttons` to :black_circle: `xterm (Right extends, Middle pastes)` by setting the line `"MouseIsXterm"=dword:00000001` in the `\configurations\default-settings.cfg` file
 
 - Window / Colors
 
