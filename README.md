@@ -40,13 +40,13 @@ We picked up most of these configuration settings, modified some and added some 
 
 - Window / Appearance
 
-  - `Font quality` = :radio_button: `ClearType`
+  - `Font quality` = :black_circle: `ClearType`
   - `Gap between text and window edge` = `3`
 
 - Window / Translation
 
   - `Remote character set` = `UTF-8`
-  - `Handling of line drawing characters` = :radio_button: `Use Unicode line drawing code points`
+  - `Handling of line drawing characters` = :black_circle: `Use Unicode line drawing code points`
 
 - Window / Selection
 
@@ -54,12 +54,12 @@ We picked up most of these configuration settings, modified some and added some 
 
 
   > :bulb:  
-  > you can change `Action on mouse buttons` to :radio_button: `xterm (Right extends, Middle pastes)` by setting the line `"MouseIsXterm"=dword:00000001` in the `\configurations\default-settings.cfg` file
+  > you can change `Action on mouse buttons` to :black_circle: `xterm (Right extends, Middle pastes)` by setting the line `"MouseIsXterm"=dword:00000001` in the `\configurations\default-settings.cfg` file
 
 - Window / Colors
 
   - :ballot_box_with_check: `Allow terminal to use xterm 256-colour mode`
-  - `Indicate bolded text by changing` = :radio_button: `The font`
+  - `Indicate bolded text by changing` = :black_circle: `The font`
   - `Select a colour to adjust:` `ANSI Blue`
     - `Red` = `74`
     - `Green` = `74`
