@@ -14,15 +14,16 @@ We picked up most of these configuration settings, modified some and added some 
 
 - Session
 
-  - `Connection type` = :radio_button: `SSH`
+  - `Connection type` = :black_circle: `SSH`
+
 
   > :bulb:  
-  > you can change `Close window on exit` to :radio_button: `Never` by setting the line `"CloseOnExit"=dword:00000001` in the `\configurations\default-settings.reg` file
+  > you can change `Close window on exit` to :black_circle: `Never` by setting the line `"CloseOnExit"=dword:00000001` in the `\configurations\default-settings.reg` file
 
 - Terminal / Bell
 
-  - `Action to happen when a bell occurs` = :radio_button: `None (bell disabled)`
-  - `Taskbar/caption indication` = :radio_button: `Flashing`
+  - `Action to happen when a bell occurs` = :black_circle: `None (bell disabled)`
+  - `Taskbar/caption indication` = :black_circle: `Flashing`
 
 - Window
 
@@ -51,6 +52,7 @@ We picked up most of these configuration settings, modified some and added some 
 
   - `Paste to clipboard in RTF as well as plain text`
 
+
   > :bulb:  
   > you can change `Action on mouse buttons` to :radio_button: `xterm (Right extends, Middle pastes)` by setting the line `"MouseIsXterm"=dword:00000001` in the `\configurations\default-settings.cfg` file
 
@@ -74,7 +76,7 @@ We picked up most of these configuration settings, modified some and added some 
 
 - Connection / Data
 
-  - `Terminal-type string` = `putty`
+  - `Terminal-type string` = `"putty"`
 
     > :warning:  
     > make sure you first install the `putty` and/or `putty-256color` terminal definitions on your remote machine, as described in more detail in https://sanctum.geek.nz/arabesque/putty-configuration/
