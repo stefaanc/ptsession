@@ -35,7 +35,7 @@ We picked up most of these configuration settings, modified some and added some 
 - Window / Appearance > Font settings: [Change...]
 
   - `Font` = `Lucida Console`
-  - `Size` = `12`
+  - `Size` = `10`
 
 - Window / Appearance
 
