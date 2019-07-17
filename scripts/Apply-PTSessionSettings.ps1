@@ -17,7 +17,7 @@ function ApplyPTSessionSettings {
     New-Item -ItemType 'file' -Path "./_.reg" -Force
 
     #
-    # skip "ColourXX" settings
+    # pick-up default settings, skip "ColourXX" settings
     ( Get-Content -Path "$ROOT/colors/ptsession-default-settings.reg" ) | ForEach-Object -Process {
         if ( -not "$_".StartsWith('"Colour') ) {
             $_ | Out-File "./_.reg" -Append
@@ -27,7 +27,7 @@ function ApplyPTSessionSettings {
     #
     # add colours
     ( Get-Content -Path "$ROOT/colors/ptsession-putty-improved.txt" ) | ForEach-Object -Process {
-            $_ | Out-File "./_.reg" -Append
+        $_ | Out-File "./_.reg" -Append
     }
 
     reg import "./_.reg"
