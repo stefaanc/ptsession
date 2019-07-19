@@ -96,7 +96,7 @@ Apply-PTSessionSettings.ps1 -Theme "$ROOT/colors/ptsession-putty-improved.json"
 
 ## PuTTY's Colour Settings
 
-We defined a number of color-schemes based on [the `Colorized` color-schemes defined in the PSConsole repository](https://github.com/stefaanc/psconsole/blob/master/docs/color-schemes.md), and in turn based on the very popular [`Solarized` color-scheme](https://github.com/stefaanc/psconsole/blob/master/docs/color-schemes.md).
+We defined a number of color-schemes based on [the `Colorized` color-schemes defined in the PSConsole repository](https://github.com/stefaanc/psconsole/blob/master/docs/color-schemes.md), and in turn based on the very popular [`Solarized` color-scheme](https://ethanschoonover.com/solarized/).
 
 The color-schemes are defined in JSON files in the `/colors` folder.
 
@@ -110,6 +110,18 @@ The `ptsession-putty-improved.json` color-scheme implements the modified blue co
 
 - Note that the `putty-legacy` and `-improved` color-schemes are not really part of the `Colorized` family, hence the unexpected blue color with the "Orange" text in the images.  This is because the orange color is mapped on the `ANSI Blue Bold` PuTTY-name.
 - Remark also that for the `Colorized` color-schemes the background color is always mapped on the `ANSI Black` color, the foreground color on `ANSI White`, the bold background color is  always mapped on the `ANSI White Bold` color, the bold foreground color on `ANSI Black Bold`.  So in the `putty-light` color-scheme, the `ANSI Black` color is almost white, `ANSI White Bold` is almost black.
+
+The extra `Colorized` colors for the `putty-dark` and `putty-light` color-schemes are
+
+Backgrounds      | Popup         | RGB                              | HSV
+:----------------|:--------------|:---------------------------------|:---
+`putty-dark`     | `putty-light` | `#212121` &emsp; (33, 33, 33)    | (0, 0%, 13%)
+`putty-light`    | `putty-dark`  | `#ededed` &emsp; (237, 237, 237) | (0, 0%, 93%)
+
+ BrightText for Backgrounds | RGB                              | HSV
+:---------------------------|:---------------------------------|:---
+`putty-dark`                | `#dedede` &emsp; (222, 222, 222) | (0, 0%, 87%)
+`putty-light`               | `#424242` &emsp; (66, 66, 66)    | (0, 0%, 26%)
 
 > :bulb:
 > We made some [conversion tables to convert names between different systems](/docs/color-names.md).
