@@ -6,7 +6,7 @@
 #
 # use:
 #
-#     Apply-PTSessionSettings.ps1 [ -Theme "$Theme" ]
+#     Set-PTSessionColors.ps1 "root@my-server" [ -Theme "$Theme" ]
 #
 # with default $Theme = "$ROOT\colors\ptsession-putty-improved.json"
 #
@@ -36,40 +36,28 @@
 #     }
 #
 param(
-    [Parameter(Position=0)][string]$Theme
+    [Parameter(Mandatory=$true, Position=0)][string]$Name,
+    [Parameter(Position=1)][string]$Theme
 )
 
 $ErrorActionPreference = 'Stop'
 
-#
-# update default settings
-function ApplyPTSessionSettings {
-    if ( -not $Theme ) {
-        $Theme = "$ROOT/colors/ptsession-putty-improved.json"
-    }
-    $colors = $( Get-Content -Raw -Path "$Theme" | ConvertFrom-Json )
-
-    New-Item -ItemType 'file' -Path "./_.reg" -Force | Out-Null
-
-    #
-    # pick-up default settings, skip "ColourXX" settings
-    ( Get-Content -Path "$ROOT/colors/ptsession-default-settings.reg" ) | ForEach-Object -Process {
-        if ( -not "$_".StartsWith('"Colour') ) {
-            $_ | Out-File "./_.reg" -Append
-        }
-    }
-
-    #
-    # add colours
-    $colors.PSObject.Properties | ForEach-Object -Process {
-        "`"" + $_.Name + "`"=`"" + $_.Value + "`"" | Out-File "./_.reg" -Append
-    }
-
-    #
-    # import in registery
-    reg import "./_.reg"
-    Remove-Item -Path "./_.reg" -Force
+$key = "$Name".Replace(" ", "%20")
+if ( -not ( Get-Item -Path "HKCU:\Software\SimonTatham\PuTTY\Sessions\$key" -ErrorAction 'Ignore' ) ) {
+    Write-Error "PuTTY session `"$Name`" doesn't exist"
 }
-ApplyPTSessionSettings
 
+if ( -not $Theme ) {
+    $Theme = "$ROOT/colors/ptsession-putty-improved.json"
+}
+$colors = $( Get-Content -Raw -Path "$Theme" | ConvertFrom-Json )
+
+Push-Location
+Set-Location "HKCU:\Software\SimonTatham\PuTTY\Sessions\$key"
+
+$colors.PSObject.Properties | ForEach-Object -Process {
+    New-ItemProperty -Path . -PropertyType 'String' -Name $_.Name -Value $_.Value -Force
+}
+
+Pop-Location
 exit 0
