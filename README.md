@@ -118,11 +118,6 @@ Backgrounds      | Popup         | RGB                              | HSV
 `putty-dark`     | `putty-light` | `#212121` &emsp; (33, 33, 33)    | (0, 0%, 13%)
 `putty-light`    | `putty-dark`  | `#ededed` &emsp; (237, 237, 237) | (0, 0%, 93%)
 
- BrightText for Backgrounds | RGB                              | HSV
-:---------------------------|:---------------------------------|:---
-`putty-dark`                | `#dedede` &emsp; (222, 222, 222) | (0, 0%, 87%)
-`putty-light`               | `#424242` &emsp; (66, 66, 66)    | (0, 0%, 26%)
-
 > :bulb:
 > We made some [conversion tables to convert names between different systems](/docs/color-names.md).
 
